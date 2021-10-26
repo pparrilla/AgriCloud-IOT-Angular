@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Sensor } from 'src/app/interfaces/sensor';
 import { MeasuresService } from 'src/app/services/measures.service';
-
-const listData: Sensor[] = [
-
-];
 
 @Component({
   selector: 'app-tables',
@@ -14,15 +13,34 @@ const listData: Sensor[] = [
 export class TablesComponent implements OnInit {
   sensors: Sensor[] = [];
 
-  displayedColumns: string[] = ['id', 'value', 'time'];
-  dataSource = listData;
+  displayedColumns: string[] = ['device_id', 'value', 'timestamp'];
+  dataSource = new MatTableDataSource(this.sensors);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _measuresService: MeasuresService) { }
 
   ngOnInit(): void {
-      this._measuresService.getMeasures("temperature").subscribe(data => {
-        this.sensors = data;
-      })
+      this.getMeasures("temperature");
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  getMeasures(type: string): void {
+    this._measuresService.getMeasures(type).subscribe(data => {
+      this.sensors = data;
+      this.dataSource.data = this.sensors;
+      console.log(this.dataSource);
+    })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

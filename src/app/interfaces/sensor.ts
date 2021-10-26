@@ -1,5 +1,5 @@
 export interface Sensor {
-    id: number,
+    device_id: number,
     value: number,
-    time: string
+    timestamp: string
 }
