@@ -18,6 +18,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 
+// Google Charts
+import { GoogleChartsModule } from 'angular-google-charts';
+
 
 @NgModule({
   declarations: [],
@@ -35,7 +38,8 @@ import {MatSortModule} from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    GoogleChartsModule
   ],
   exports: [
     MatSliderModule,
@@ -50,7 +54,8 @@ import {MatSortModule} from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    GoogleChartsModule
   ]
 })
 export class SharedModule { }
