@@ -1,20 +1,18 @@
 <div class="container">
     <mat-toolbar>
         <span class="example-spacer"></span>
-        <button mat-button (click)="getMeasures('temperature')">Temperatura</button>
-        <button mat-button (click)="getMeasures('humidity')">Humedad</button>
-        <button mat-button (click)="getMeasures('irrigation')">Radiación</button>
-        <button mat-button (click)="getMeasures('window')">Ventanas</button>
-        <button mat-button (click)="getMeasures('heater')">Calefacción</button>
+        <mat-button-toggle-group name="typeData" aria-label="Font Style">
+            <mat-button-toggle value="temperature" (click)="getMeasures('temperature')">Temperatura</mat-button-toggle>
+            <mat-button-toggle value="humidity" (click)="getMeasures('humidity')">Humedad</mat-button-toggle>
+            <mat-button-toggle value="irrigation" (click)="getMeasures('irrigation')">Radiación</mat-button-toggle>
+            <mat-button-toggle value="window" (click)="getMeasures('window')">Ventanas</mat-button-toggle>
+            <mat-button-toggle value="heater" (click)="getMeasures('heater')">Calefacción</mat-button-toggle>
+        </mat-button-toggle-group>
         <span class="example-spacer"></span>
     </mat-toolbar>
 
     <div class="mat-elevation-z3">
-        <google-chart
-            [title]="title"
-            [type]="type"
-            [data]="dataForChart"
-            [columns]="columnList">
+        <google-chart [title]="title" [type]="type" [data]="dataForChart" [columns]="columnList">
         </google-chart>
     </div>
 </div>

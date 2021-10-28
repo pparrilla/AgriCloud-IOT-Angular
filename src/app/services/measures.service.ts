@@ -17,6 +17,10 @@ export class MeasuresService {
   }
 
   getMeasures(data: String): Observable<Sensor[]> {
-    return this.http.get<Sensor[]>("http://0.0.0.0:8080/get/" + data);
+    return this.http.get<Sensor[]>("http://192.168.1.102:8080/get/" + data);
+  }
+
+  getLastMeasures(data: String): Observable<Sensor[]> {
+    return this.http.get<Sensor[]>("http://192.168.1.102:8080/get/sqlite/" + data);
   }
 }

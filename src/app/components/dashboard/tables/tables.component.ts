@@ -34,7 +34,6 @@ export class TablesComponent implements OnInit {
     this._measuresService.getMeasures(type).subscribe(data => {
       this.sensors = data;
       this.dataSource.data = this.sensors;
-      console.log(this.dataSource);
     })
   }
 

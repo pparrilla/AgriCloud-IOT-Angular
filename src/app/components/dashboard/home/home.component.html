@@ -2,4 +2,39 @@
     <mat-toolbar>
         <span>Home</span>
     </mat-toolbar>
+    <div class="mat-elevation-z3 cards-content">
+        <div class="cards">
+            <mat-card *ngFor="let item of temperature" class="card">
+                <mat-card-title>Sensor de temperatura {{item.id}}</mat-card-title>
+                <mat-card-content>{{item.value}} ºC</mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="cards">
+            <mat-card *ngFor="let item of humidity" class="card">
+                <mat-card-title>Sensor de humedad {{item.id}}</mat-card-title>
+                <mat-card-content>{{item.value}} %</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="cards">
+            <mat-card *ngFor="let item of irradiation" class="card">
+                <mat-card-title>Sensor de radiación {{item.id}}</mat-card-title>
+                <mat-card-content>{{item.value}} W/m²</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="cards">
+            <mat-card *ngFor="let item of window" class="card">
+                <mat-card-title>Ventana {{item.id}}</mat-card-title>
+                <mat-card-content>{{item.value}}</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="cards">
+            <mat-card *ngFor="let item of heater" class="card">
+                <mat-card-title>Calefacción {{item.id}}</mat-card-title>
+                <mat-card-actions>
+                    <mat-slide-toggle>Estado</mat-slide-toggle>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
 </div>
