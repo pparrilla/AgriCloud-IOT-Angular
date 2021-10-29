@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TablesComponent } from './tables/tables.component';
 import { GraphsComponent } from './graphs/graphs.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { GraphsComponent } from './graphs/graphs.component';
     HomeComponent,
     NavbarComponent,
     TablesComponent,
-    GraphsComponent
+    GraphsComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,

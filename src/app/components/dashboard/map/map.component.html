@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Valor seleccionado: {{devices.selectedOptions.selected[0]?.value}}</span>
+    </mat-toolbar>
+    <div class="mat-elevation-z3 ">
+        <mat-selection-list #devices [multiple]="false">
+            <mat-grid-list cols="2" rowHeight="3:1">
+                <mat-grid-tile *ngFor="let itemList of sensors" style="background: lightblue;">
+                    <mat-list-option *ngFor="let item of itemList" [value]="getValue([item.type, item.id])" >
+                        Sensor {{item.string}} {{item.id}}
+                    </mat-list-option>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-selection-list>
+
+    </div>
+</div>

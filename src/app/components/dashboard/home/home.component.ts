@@ -37,4 +37,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  isSlideChecked(sensor: any) {
+    if(sensor.value == 1) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
 }

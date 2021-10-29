@@ -4,9 +4,9 @@
 }
 
 .cards-content {
-    flex: 1 1 auto;
+    display: flex;
 }
 
 .cards {
-    width: 20%;
+    flex: 1 1 auto;
 }

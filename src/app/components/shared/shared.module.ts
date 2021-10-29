@@ -20,6 +20,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
 
 // Google Charts
 import { GoogleChartsModule } from 'angular-google-charts';
@@ -45,6 +47,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
     MatButtonToggleModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatGridListModule,
+    MatListModule,
     GoogleChartsModule
   ],
   exports: [
@@ -64,6 +68,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
     MatButtonToggleModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatGridListModule,
+    MatListModule,
     GoogleChartsModule
   ]
 })

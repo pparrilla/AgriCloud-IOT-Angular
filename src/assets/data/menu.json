@@ -1,14 +1,19 @@
 [
     {
-        "name": "Dashboard",
+        "name": "Home",
         "redirect": "/dashboard"
     },
     {
-        "name": "Tables",
+        "name": "Tabla",
         "redirect": "/dashboard/tables"
     },
     {
-        "name": "Graphs",
+        "name": "Gráficas",
         "redirect": "/dashboard/graphs"
+    },
+    {
+        "name": "Mapa",
+        "redirect": "/dashboard/map"
     }
+
 ]

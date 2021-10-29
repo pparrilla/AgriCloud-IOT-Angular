@@ -25,14 +25,16 @@
         <div class="cards">
             <mat-card *ngFor="let item of window" class="card">
                 <mat-card-title>Ventana {{item.id}}</mat-card-title>
-                <mat-card-content>{{item.value}}</mat-card-content>
+                <mat-card-actions>
+                    <mat-slide-toggle [checked]="isSlideChecked(item)">Estado</mat-slide-toggle>
+                </mat-card-actions>
             </mat-card>
         </div>
         <div class="cards">
             <mat-card *ngFor="let item of heater" class="card">
                 <mat-card-title>Calefacción {{item.id}}</mat-card-title>
                 <mat-card-actions>
-                    <mat-slide-toggle>Estado</mat-slide-toggle>
+                    <mat-slide-toggle [checked]="isSlideChecked(item)">Estado</mat-slide-toggle>
                 </mat-card-actions>
             </mat-card>
         </div>
