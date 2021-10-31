@@ -12,15 +12,11 @@ export class MeasuresService {
     private http: HttpClient
   ) { }
 
-  async getMeasuresData (data: String) {
-    return await this.http.get("http://0.0.0.0:8080/get/" + data).toPromise()
-  }
-
   getMeasures(data: String): Observable<Sensor[]> {
-    return this.http.get<Sensor[]>("http://192.168.1.102:8080/get/" + data);
+    return this.http.get<Sensor[]>("http://192.168.1.102:8080/type/" + data);
   }
 
   getLastMeasures(data: String): Observable<Sensor[]> {
-    return this.http.get<Sensor[]>("http://192.168.1.102:8080/get/sqlite/" + data);
+    return this.http.get<Sensor[]>("http://192.168.1.102:8080/type/sqlite/" + data);
   }
 }

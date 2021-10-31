@@ -56,7 +56,7 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.getMeasures("temperature");
     this.getMeasures("humidity");
-    this.getMeasures("irrigation");
+    this.getMeasures("irradiance");
     this.getMeasures("window");
     this.getMeasures("heater");
     console.log(this.humidity);
@@ -68,7 +68,7 @@ export class MapComponent implements OnInit {
       switch(type) {
         case "temperature": this.temperature = data; break;
         case "humidity" : this.humidity = data; break;
-        case "irrigation" : this.irradiation = data; break;
+        case "irradiance" : this.irradiation = data; break;
         case "window" : this.window = data; break;
         case "heater" : this.heater = data; break
       }
