@@ -37,7 +37,6 @@ export class GraphsComponent implements OnInit {
 
   drawChart(typeData: string): void {
     this.dataSource.sort((a: any, b: any) => (a.device_id - b.device_id));
-    // Generate columnList
     this.columnList = []
     this.columnList.push('Timestamp');
     let lastDevice = -1;
@@ -60,48 +59,11 @@ export class GraphsComponent implements OnInit {
       counter++;
       counterCreator++;
     }
-    // Now in columnList there is how many differents device_id
 
 
 
     console.log(this.columnList)
     console.log(this.dataForChart)
   }
-
-  // drawChart(typeData: string): void {
-  //   this.dataSource.sort((a: any, b: any) => (a.device_id - b.device_id));
-  //   let i: number = 0;
-  //   let deviceID: number = this.dataSource[i].device_id;
-  //   this.deviceList.push(deviceID);
-  //   let counter: number = 0;
-  //   this.dataForChart[counter] = [];
-  //   for (i = 0; i < this.dataSource.length; i++) {
-  //     if (deviceID != this.dataSource[i].device_id) {
-  //       counter++;
-  //       this.dataForChart[counter] = [];
-  //       deviceID = this.dataSource[i].device_id;
-  //       this.deviceList.push(deviceID);
-  //     }
-  //     this.dataForChart[counter].push([this.dataSource[i].timestamp, this.dataSource[i].value]);
-  //   }
-  //   this.title = typeData;
-  //   this.chart = new google.visualization.DataTable();
-  //   this.chart.addColumn('string', typeData);
-  //   for (var device of this.deviceList) {
-  //     var sensor = "device_" + device;
-  //     this.chart.addColumn('number', sensor);
-  //   }
-
-  //   for (i = 0; i < this.dataForChart[counter].length; i++) {
-  //     let row: any = [];
-  //     row.push(this.dataForChart[i].timestamp);
-  //     for(let j=0; j <= counter; j++) {
-  //       row.push(this.dataForChart[j].value);
-  //     }
-  //     this.chart.addRow(row);
-  //   }
-
-  //   console.log(this.chart)
-  // }
 
 }
